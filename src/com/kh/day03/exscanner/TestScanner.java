@@ -10,7 +10,7 @@ public class TestScanner {
 		System.out.println("태어난 월을 입력해주세요.");
 		int month = sc.nextInt();
 		System.out.println("키를 입력해주세요");
-		double tall = sc.nextDouble();
+		double tall = sc.nextDouble(); 
 		System.out.println("성별을 입력해주세요");
 		char gender = sc.next().charAt(0);
 		System.out.println("주소를 입력해주세요");
