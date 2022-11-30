@@ -46,7 +46,7 @@ public class Exercise_Array {
 		System.out.print("양의 정수를 5개를 입력하세요 : ");
 		for(int i = 0; i < arrs.length; i++) {
 			arrs[i] = sc.nextInt();
-			sum = sum + arrs[i]; // sum+= arrs[i]; (복합대입연산자)
+			sum = sum + arrs[i]; // sum += arrs[i]; (복합대입연산자)
 		}
 		// 평균은 총합 / 데이터의 갯수, 1,2 -> 1+2/2 = 1.5
 		System.out.println("평균은 " + (double)sum/arrs.length + "입니다.");
@@ -70,9 +70,11 @@ public class Exercise_Array {
 		System.out.println("가장 큰 수는 " + max + "입니다.");
 	}
 	public void exercise5()	{
+
+
 		/*
 		 * 사용자에게 주민번호를 입력 받은 후
-		 * 성별 자리 이후부터 *로 저장되어 출력되도록 프로그럄을 작성하시오
+		 * 성별 자리 이후부터 *로 저장되어 출력되도록 프로그램을 작성하시오
 		 * 210618-1124600 -> 210618-1*****
 		 * 200518-3233920 -> 200518-3*****
 		 * 
@@ -101,6 +103,23 @@ public class Exercise_Array {
 			System.out.print(origin[i]);
 		}
 	}
+	 
+	// forEach문1
+	public void exercise6() {
+		int [] nums = {1, 2, 3, 4, 5}; // 할당과 초기화 동시에
+		for(int num : nums) {
+			System.out.print(num + " ");
+		}
+	}
+	
+	public void exercise7() {
+		String [] fruits = {"딸기", "복숭아", "포도", "체리", "망고"};
+		for(String fruit : fruits) {
+			System.out.print(fruit + " ");
+		}
+	}
 }
+
+
 
 
