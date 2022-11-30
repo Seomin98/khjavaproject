@@ -14,16 +14,19 @@ public class Exam_SortSelect {
 		// {2, 5, 4, 1, 3}
 		int [] arrs = {2, 5, 4, 1, 3};
 		int min; // 인덱스값 저장
-		for(int i = 0; i < arrs.length; i++) {
+		for (int i = 0; i < arrs.length; i++) {
 			min = i; // 가장 작을 때 인덱스 값
-			for(int j = i+1; j < arrs.length; j++) {
-				if(arrs[min] > arrs[j]) {
+			for (int j = i + 1; j < arrs.length; j++) {
+				if (arrs[min] > arrs[j]) {
 					min = j;
 				}
 			}
 			int temp = arrs[min];
 			arrs[min] = arrs[i];
 			arrs[i] = temp;
+		}
+		for (int i = 0; i < arrs.length; i++) {
+			System.out.print(arrs[i] + " ");
 		}
 		// i=0 일때
 		// 1, 5, 4, 2, 3 // 첫번째 결과
