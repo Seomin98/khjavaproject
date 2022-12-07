@@ -32,6 +32,7 @@ public class GoodCalc extends Calculator {
 		return avg;
 	}
 }
+
 		
 //		int [] a = {1, 2, 3, 4, 7};
 //		System.out.println("гу: " + calc.add(1, 2));
