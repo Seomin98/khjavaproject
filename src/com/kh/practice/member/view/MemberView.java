@@ -21,6 +21,31 @@ public class MemberView {
 		return value;
 	}
 	
+	public Member modifyMember() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("아이디 : ");
+		String memberId = sc.next();
+		System.out.println("비밀번호 : ");
+		String memberPwd = sc.next();
+		System.out.println("이메일 : ");
+		String memberEmail = sc.next();
+		System.out.println("전화번호 : ");
+		String memberPhone = sc.next();
+		System.out.println("주소 : ");
+		sc.nextLine();
+		String memberAdress = sc.nextLine();
+		System.out.println("취미 : ");
+		String memberHobby = sc.next();
+		Member member = new Member();
+		member.setMemberId(memberId);
+		member.setMemberPwd(memberPwd);
+		member.setMemberEmail(memberEmail);
+		member.setMemberPhone(memberPhone);
+		member.setMemberAddress(memberAdress);
+		member.setMemberHobby(memberHobby);
+		return member;
+	}
+	
 	public Member inputMember() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("아이디 : ");
@@ -55,11 +80,18 @@ public class MemberView {
 		return member; // 리턴값 안하면 값 사라짐!!!
 	}
 	
-	public String inputMemberId() {
+	public String inputMemberId(String category) {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("검색할 아이디 입력 : ");
+		System.out.println(category + "할 아이디 입력 : ");
 		String memberId = sc.next();
 		return memberId;
+	}
+	
+	public String inputMemberName() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("검색할 이름 입력 : ");
+		String memberName = sc.next();
+		return memberName;
 	}
 	
 	public void showAllMember(List<Member> mList) {
@@ -78,9 +110,27 @@ public class MemberView {
 		}
 	}
 	
-	public void printOneById(Member mOne) {
-		System.out.println(mOne.toString());
+	public void showOneMember(Member mOne) {
+		System.out.println("=== === === 회원정보 상세조회 === === ===");
+		
+			System.out.println("회원 아이디 : " + mOne.getMemberId());
+			System.out.println("회원 이름 : " + mOne.getMemberName());
+			System.out.println("회원 성별 : " + mOne.getMemberGender());
+			System.out.println("회원 나이 : " + mOne.getMemberAge());
+			System.out.println("회원 이메일 : " + mOne.getMemberEmail());
+			System.out.println("회원 폰번호 : " + mOne.getMemberPhone());
+			System.out.println("회원 주소 : " + mOne.getMemberAddress());
+			System.out.println("회원 취미 : " + mOne.getMemberHobby());
+			System.out.println("=== === === === === === === === === ===");
 
+	}
+
+	public void displaySuccess(String message) {
+		System.out.println("[처리 결과] : " + message);
+	}
+
+	public void displayError(String message) {
+		System.out.println("[오류 발생]" + message);
 	}
 }
 

@@ -16,11 +16,40 @@ public class MemberController {
 		// c[i] = new Circle();
 		mList.add(member);
 	}
+	public void updateMember(Member member) {
+		for(int i = 0; i < mList.size(); i++) {
+			String memberId = member.getMemberId();
+			Member storedMember = mList.get(i);
+			String storedId = mList.get(i).getMemberId();
+			if(storedId.equals(memberId)) {
+				storedMember.setMemberPwd(member.getMemberPwd());
+				storedMember.setMemberEmail(member.getMemberEmail());
+				storedMember.setMemberPhone(member.getMemberPhone());
+				storedMember.setMemberAddress(member.getMemberAddress());
+				storedMember.setMemberHobby(member.getMemberHobby());
+			}
+		}
+	}
+	
+	public void removeMember(int index) {
+		mList.remove(index);
+	}
 	
 	public List<Member> printAllMember() {
 		return mList;
 	}
-	// 같은 값이 있을 때 인덱스를 리턴
+	
+	public int findMemberIndex(String memberId) {
+		for(int i = 0; i < mList.size(); i++) {
+		Member mOne = mList.get(i);
+		if(memberId.equals(mOne.getMemberId())) {
+			return i;
+			}
+		}
+		return -1;
+	}
+	
+	// 같은 값이 있을 때 해당 객체 리턴
 	public Member findMemberId(String memberId) {
 		for(int i = 0; i < mList.size(); i++) {
 			// memberId와 같은 데이터가 
@@ -33,13 +62,20 @@ public class MemberController {
 		}
 		return null; // return -1;
 	}
+	
+	
+	public Member findMemberName(String memberName) {
+		for(int i = 0; i < mList.size(); i++) {
+			Member mOne = mList.get(i);
+			if(memberName.equals(mOne.getMemberName())) {
+				return mOne;
+			}
+		}
+		return null;
+	}
 	// 리턴된 인덱스 값을 이용하여 데이터를 찾기
 //	public Member printOneByIndex(int index) {
 //		Member member = mList.get(index);
 //		return member;
 //	}
-	
-	public void findMemberName() {
-		
-	}
 }
